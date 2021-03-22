@@ -12,10 +12,8 @@ export class NodeConfigService extends Socket {
  
   constructor() {
     super({ url: environment.ws_url, options: {} });
-}
-
-  // Our simplified interface for sending
-  // messages back to our socket.io server
+  }
+ 
   public sendMessage(message) {
     this.emit('new-message', message);
   }
