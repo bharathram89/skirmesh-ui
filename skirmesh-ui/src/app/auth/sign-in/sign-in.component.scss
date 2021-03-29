@@ -1,0 +1,75 @@
+
+.cust{
+    background: #e3d1b3;
+    box-shadow: 5px 5px 50px #ccba87;
+}
+.cust_btn{
+    background: #223b04;//#786546-223b04-182b02
+}
+.custom_skirmesh{
+    background-image: url('../../../assets/images/soldierB.jpg');
+    background-size: cover;
+}
+.custom_skirmesh_margin { 
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+
+.card-columns .card {
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 3;
+        column-gap: 1.25rem;
+    }
+    .card-columns .card {
+        display: inline-block;
+        width: 100%;
+    }
+}
+.text-muted {
+    color: #9faecb !important;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+}

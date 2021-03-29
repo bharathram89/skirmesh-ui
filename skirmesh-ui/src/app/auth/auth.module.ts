@@ -5,8 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component'; 
-import { GlobalModule } from '../global/global.module';
-
+import { GlobalModule } from '../global/global.module'; 
 
 @NgModule({
   declarations: [AuthComponent, SignUpComponent, SignInComponent],

@@ -7,16 +7,11 @@ import { NodeConfigService } from '../service/node-status.service'
 })
 export class AppComponent {
   title = 'skirmesh-ui';
-  constructor(private nodeConfigSvc : NodeConfigService){ }
+  constructor(){ }
  
   ngOnInit() {
-    this.nodeConfigSvc.getMessages().subscribe(msg => {
-      console.log(msg);
-    })
+    
   }
- 
-  sendMessage() {
-    this.nodeConfigSvc.sendMessage("Test Message");
-  }
+  
 
 }

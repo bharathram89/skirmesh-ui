@@ -1,1 +1,32 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <img [routerLink]="['/non-secure/home']" class="hc_custom img-fluid" routerLink="/welcomePage" src="../../../assets/images/logo.png" alt="user"/>
+    
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active"  id="nav_home" [routerLink]="['/non-secure/home']" >Home </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link"  id="nav_featureList" [routerLink]="['/non-secure/feature-list']">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link"  id="nav_release" [routerLink]="['/non-secure/player-info']">Player Info</a>
+                </li> 
+                <li class="nav-item">
+                <a class="nav-link" id="nav_register" [routerLink]="['/non-secure/field-info']">Field Info</a>
+                </li> 
+                <li class="nav-item">
+                <a class="nav-link" id="nav_register" [routerLink]="['/auth/sign-up']">Register</a>
+                </li> 
+            </ul>
+            <div class="form-inline my-2 my-lg-0"> 
+                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/auth/login']" type="submit">Sign In</button>
+            </div>
+        </div>
+    </div>
+  </nav>
+  
