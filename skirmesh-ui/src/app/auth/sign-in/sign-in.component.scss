@@ -1,4 +1,7 @@
 
+.center-cust{
+    justify-content: center;
+}
 .cust{
     background: #e3d1b3;
     box-shadow: 5px 5px 50px #ccba87;
@@ -8,7 +11,12 @@
 }
 .custom_skirmesh{
     background-image: url('../../../assets/images/soldierB.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    
 }
 .custom_skirmesh_margin { 
     width: 100%;
