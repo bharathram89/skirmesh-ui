@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+import { AuthService } from 'src/service/auth.service';
 
 // custom validator to check that two fields match
 export function MustMatch(controlName: string, matchingControlName: string) {
@@ -34,7 +35,8 @@ export class SignUpComponent implements OnInit {
   fields = { fname: '', lname: '', email: '', password: '', callSign: '', confirmPassword: "", fieldName: "" }
 
   constructor(
-    private socialAuthService: SocialAuthService) { }
+    private socialAuthService: SocialAuthService,
+    private authSvc: AuthService) { }
 
   ngOnInit(): void {
     this.addUser = new FormGroup({
@@ -133,6 +135,10 @@ export class SignUpComponent implements OnInit {
       "email": this.addUser.value,
       "type": type
     }
+    this.authSvc.createUser(data).subscribe(data=>{
+
+      console.log(data,"resp")
+    })
   }
 
 }
