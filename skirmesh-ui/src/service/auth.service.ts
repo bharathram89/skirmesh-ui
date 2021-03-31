@@ -18,4 +18,8 @@ export class AuthService {
   createUser(data){
     return this.http.post('http://api.skirmesh.net/resources'+'/users',data,this.options)
   }
+
+  userLogin(data){
+    return this.http.post('http://api.skirmesh.net'+'/login',data,this.options)
+  }
 }

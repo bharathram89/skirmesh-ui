@@ -5,25 +5,6 @@ import { SocialAuthService } from "angularx-social-login";
 import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 import { AuthService } from 'src/service/auth.service';
 
-// custom validator to check that two fields match
-export function MustMatch(controlName: string, matchingControlName: string) {
-  return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
-
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-          // return if another validator has already found an error on the matchingControl
-          return;
-      }
-
-      // set error on matchingControl if validation fails
-      if (control.value !== matchingControl.value) {
-          matchingControl.setErrors({ mustMatch: true });
-      } else {
-          matchingControl.setErrors(null);
-      }
-  }
-}
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -128,15 +109,17 @@ export class SignUpComponent implements OnInit {
   onSubmit() {
     let type = document.getElementById('fieldSignUp').classList.contains('active') ? 'field' : 'player';
     let data = {
-      "callSign": this.addUser.value,
-      "firstName": this.addUser.value,
-      "lastName": this.addUser.value,
-      "password": this.addUser.value,
-      "email": this.addUser.value,
-      "type": type
+      "callSign": type=='field'?this.addUser.value.fieldName:this.addUser.value.callSign,
+      "firstName": this.addUser.value.fname,
+      "lastName": this.addUser.value.lname,
+      "password": this.addUser.value.password,
+      "email": this.addUser.value.email
     }
     this.authSvc.createUser(data).subscribe(data=>{
-
+      document.getElementById('userCreatedMessage').classList.toggle('d-none')
+    },
+    err=>{
+      document.getElementById('userCreatFaileddMessage').classList.toggle('d-none')
       console.log(data,"resp")
     })
   }
