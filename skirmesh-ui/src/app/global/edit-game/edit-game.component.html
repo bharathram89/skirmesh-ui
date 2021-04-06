@@ -1,0 +1,24 @@
+<form [formGroup]="gameModeForm" (ngSubmit)="onNewGameModeFormSubmit()">
+    <input type="hidden" formControlName="id">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Firstname" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="numNodes">Num of Nodes</label>
+      <input type="text" class="form-control" id="numNodes" placeholder="numNodes" formControlName="numNodes">
+    </div>  
+    <div class="form-group">
+      <label for="nodeModes">Node Modes</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="nodeModes" placeholder="" formControlName="nodeModes">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="map">Map</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="map" placeholder="" formControlName="map">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>

@@ -34,6 +34,10 @@ export class AuthGuardGuard implements CanActivate {
             this.userSvc.setUserData(userdata);
             return true;
           }
+        },
+        err=>{
+          console.log(err,"error in AUTH GUARD")
+          return false;
         })) 
       }else{
         return false;

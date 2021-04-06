@@ -1,0 +1,15 @@
+<app-tabs>
+    <app-tab [tabTitle]="'Game Modes List'">
+      <h3>List of Saved Game Modes</h3>
+      <app-gamelist
+        [gamemodes]="gameModes"
+        (addMode)="onAddMode()"
+        (editMode)="onEditMode($event)">
+      </app-gamelist>
+      <hr />
+    </app-tab>
+  </app-tabs> 
+
+  <ng-template let-gameModes="gameModes" #gameModeEdit>
+    <app-edit-game [gameMode]="gameModes" (saveGameMode)="onGameModeFormSubmit($event)"></app-edit-game>
+  </ng-template>

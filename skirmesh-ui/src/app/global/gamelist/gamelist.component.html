@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+      <th>Name</th>
+      <th>Number of Nodes For Game</th>
+      <th>Node Modes Enabled</th>
+      <th>Map</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of gamemodes">
+        <td>{{ p.name }}</td>
+        <td>{{ p.numNodes }}</td>
+        <td>{{ p.nodeModes }}</td>
+        <td>{{ p.map }}</td>
+        <td><button class="btn btn-sm btn-default" (click)="editMode.emit(p)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-default btn-primary" (click)="addMode.emit()">Add new game mode</button>
