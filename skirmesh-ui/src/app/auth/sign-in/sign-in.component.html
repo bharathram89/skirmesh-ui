@@ -6,13 +6,13 @@
 					<div class="card-body">
 						<h1>Login</h1>
 						<p class="text-muted">Sign In to your account</p>
+						<a class="nav-link">Select one: </a>
 						<ul class="nav nav-pills nav-fill">
-							<a class="nav-link">Select one:</a>
 							<li class="nav-item">
-								<a id="fieldSignIn" class="nav-link" (click)="fieldSignIn()">Field Sign Up</a>
+								<a id="fieldSignIn" class="nav-link" (click)="fieldSignIn()">Field Sign-In</a>
 							</li>
 							<li class="nav-item">
-								<a id="playerSignIn" class="nav-link active" (click)="playerSignIn()">Player Sign Up</a>
+								<a id="playerSignIn" class="nav-link active" (click)="playerSignIn()">Player Sign-In</a>
 							</li>
 						</ul>
 						<br>
@@ -20,13 +20,12 @@
 							<div class="form-group input-group">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<input id="callSign" formControlName="callSign" type="text" class="form-control"
-									placeholder="Call Sign">
+									placeholder="Callsign">
 								<div *ngIf="callSign.invalid && (callSign.dirty || callSign.touched) "
 									class="alert alert-danger ">
 									<div *ngIf="callSign.errors?.required ">
-										Call Sign is required
+										Callsign is required
 									</div>
-									 
 								</div>
 							</div>
 							<div class="form-group input-group ">
@@ -37,7 +36,7 @@
 									class="alert alert-danger ">
 									<div *ngIf="fieldName.errors?.required ">
 										Field Name is required
-									</div> 
+									</div>
 								</div>
 							</div>
 							<div class="form-group input-group">
@@ -50,7 +49,7 @@
 										Password is required
 									</div>
 									<div *ngIf="password.errors?.minlength ">
-										Password needs to be min of 5 characters
+										Password needs to be min of 6 characters
 									</div>
 								</div>
 							</div>
@@ -62,12 +61,13 @@
 								<div class="col-6 text-right">
 									<button type="button" class="btn btn-link px-0">Forgot password?</button>
 								</div>
-								<div class="row"> 
+								<div class="row">
 									<div id="userLoginFaileddMessage" class="alert alert-danger d-none center-cust">
-									   We are sorry we were not able to create your account at this time <br>
-									   Please try again or <a [routerLink]="['/non-secure/contact-us']" >contact us from our contact us page</a>
-									</div> 
-								 </div>	
+										We are sorry we were not able to create your account at this time <br>
+										Please try again or <a [routerLink]="['/non-secure/contact-us']">contact us from
+											our contact us page</a>
+									</div>
+								</div>
 							</div>
 						</form>
 					</div>
@@ -78,9 +78,8 @@
 							<h2>Sign up</h2>
 							<p>Are you a field and want to get started? Reach out to us <a
 									[routerLink]="['/non-secure/field-info']">here</a>.</p>
-							<p> Are you a player with an RFID wristband? <a [routerLink]="['/auth/sign-up']">Register
+							<p> Are you a player? <a [routerLink]="['/auth/sign-up']">Register
 									here</a>!</p>
-
 						</div>
 					</div>
 				</div>

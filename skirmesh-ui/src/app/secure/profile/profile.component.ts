@@ -92,14 +92,14 @@ export class ProfileComponent implements OnInit {
           this.currentVals.profile = userData.fieldProfiles.profile ? userData.fieldProfiles.profile : 'Describe your field';
           this.currentVals.fieldName = userData.callSign ? userData.callSign : 'Your Field Name';
         } else if (this.isPlayer) {
-          this.currentVals.bio = userData.playerProfile.outfit ? userData.playerProfile.outfit : 'Tell us about you loadout!';
+          this.currentVals.bio = userData.playerProfile.outfit ? userData.playerProfile.outfit : 'Tell us about your loadout!';
           this.currentVals.clanTag = userData.playerProfile.clanTag ? userData.playerProfile.clanTag : 'Declare your Clan!';
-          this.currentVals.callSign = userData.playerProfile.callSign ? userData.playerProfile.callSign : 'Whats ur call sign!';
+          this.currentVals.callSign = userData.playerProfile.callSign ? userData.playerProfile.callSign : 'Whats your callsign!';
         }
-        this.currentVals.fName = userData.firstName ? userData.firstName : 'Please Enter First Name';
-        this.currentVals.lName = userData.lastName ? userData.lastName : 'Please Enter Last Name';
-        this.currentVals.email = userData.email ? userData.email : 'Please Enter Email';
-        this.currentVals.phone = userData.phoneNumber ? userData.phoneNumber : 'Please Enter Phone Number';
+        this.currentVals.fName = userData.firstName ? userData.firstName : 'First Name';
+        this.currentVals.lName = userData.lastName ? userData.lastName : 'Last Name';
+        this.currentVals.email = userData.email ? userData.email : 'E-mail';
+        this.currentVals.phone = userData.phoneNumber ? userData.phoneNumber : 'Phone Number';
       }
     )
   }

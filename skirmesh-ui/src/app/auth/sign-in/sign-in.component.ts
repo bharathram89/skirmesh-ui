@@ -32,7 +32,7 @@ export class SignInComponent implements OnInit {
       ]),
       "password": new FormControl(this.fields.password, [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(6)
       ]),
       "fieldName": new FormControl(this.fields.fieldName, [
         Validators.required

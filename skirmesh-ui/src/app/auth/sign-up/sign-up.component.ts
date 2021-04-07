@@ -34,7 +34,7 @@ export class SignUpComponent implements OnInit {
       ]),
       "password": new FormControl(this.fields.password, [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(6)
       ]),
       "callSign": new FormControl(this.fields.callSign, [
         Validators.required

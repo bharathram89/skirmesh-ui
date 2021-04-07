@@ -18,7 +18,9 @@ export class DeviceListComponent implements OnInit {
   devices: BehaviorSubject<any>;
 
   captureEnable:boolean;
-  bombEnable:boolean;
+  bombEnable:boolean; 
+
+
   constructor(
     userService: UserServiceService,
     tokenService: TokenStorageService,
@@ -28,8 +30,10 @@ export class DeviceListComponent implements OnInit {
     this.devices  = new BehaviorSubject({});
   }
 
+  
   ngOnInit(): void {
     this.userSvc.getUserData().subscribe(userData => {
+
       this.devices.next(userData.fieldProfiles[0].devices);
     })
   }
